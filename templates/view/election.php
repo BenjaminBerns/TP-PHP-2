@@ -23,10 +23,13 @@
     <?php else: ?>
         <p>Aucun candidat trouvé dans la base de données.</p>
     <?php endif; ?>
-                <button type="submit" id="btn" class="confirm" name="idGroupe" value="<?php echo $candidat->getGroupe()->getIdGroupe(); ?>">
-                    Confirmer
-                </button>
-            </form>
+        <button type="submit" id="btn" class="confirm" name="idGroupe"
+                value="<?php echo $candidat->getGroupe()->getIdGroupe(); ?>"
+                onclick="findTopCandidate()">
+            Confirmer
+        </button>
+
+    </form>
 </div>
 
 
@@ -98,6 +101,27 @@
             alert("Le nombre total de votes ne peut pas dépasser le nombre de candidats !!!");
         }
     }
+
+    function findTopCandidate() {
+        const counters = document.querySelectorAll('.counter1');
+        let maxVotes = -1;
+        let topCandidateIndex = null;
+
+        counters.forEach((counter, index) => {
+            const currentVotes = parseInt(counter.textContent, 10);
+            if (currentVotes > maxVotes) {
+                maxVotes = currentVotes;
+                topCandidateIndex = index;
+            }
+        });
+
+        if (topCandidateIndex !== null) {
+            alert(`Le délégué est le numéro ${topCandidateIndex + 1} avec ${maxVotes} votes.`);
+        } else {
+            alert("Aucun vote trouvé.");
+        }
+    }
+
 
 </script>
 <?php
