@@ -13,7 +13,7 @@
         foreach ($candidats as $index => $candidat): ?>
             <div class="container1">
                 <h3 class="candidat1"><?php echo $candidat->getNomCandidat(); ?> <?php echo $candidat->getPrenomCandidat(); ?></h3>
-                <h4 class="counter1" id="counter-<?php echo $index; ?>">0</h4>
+                <h4 class="counter1" id="counter-<?php echo $index; ?>"><?php echo $candidat->getVote(); ?></h4>
                 <button class="addbtn1" data-id="<?php echo $index; ?>">+</button>
                 <button class="rmvbtn1" data-counter-id="<?php echo $index; ?>">-</button>
             </div>

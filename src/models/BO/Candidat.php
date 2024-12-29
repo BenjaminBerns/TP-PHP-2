@@ -8,20 +8,32 @@ class Candidat
     private string $nomCandidat;
     private string $prenomCandidat;
     private Groupe $groupe;
-    private string $emailCandidat;
+    private string $vote;
 
     /**
      * @param int $idCandidat
-     * @param String $nomCandidat
-     * @param String $prenomCandidat
+     * @param string $nomCandidat
+     * @param string $prenomCandidat
      * @param Groupe $groupe
+     * @param string $vote
      */
-    public function __construct(int $idCandidat, string $nomCandidat, string $prenomCandidat, Groupe $groupe)
+    public function __construct(int $idCandidat, string $nomCandidat, string $prenomCandidat, Groupe $groupe, string $vote)
     {
         $this->idCandidat = $idCandidat;
         $this->nomCandidat = $nomCandidat;
         $this->prenomCandidat = $prenomCandidat;
         $this->groupe = $groupe;
+        $this->vote = $vote;
+    }
+
+    public function getVote(): string
+    {
+        return $this->vote;
+    }
+
+    public function setVote(string $vote): void
+    {
+        $this->vote = $vote;
     }
 
     public function getIdCandidat(): int

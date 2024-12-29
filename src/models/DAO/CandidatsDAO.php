@@ -20,7 +20,7 @@ class CandidatsDAO
         if($res){
             while ($row = $reqPrep->fetch(\PDO::FETCH_ASSOC)){
                 $groupe = $repo->getGroupById($row['idGroupe']);
-                $ResultatSet [] = new Candidat($row['idCandidat'], $row['nom'], $row['prenom'], $groupe);
+                $ResultatSet [] = new Candidat($row['idCandidat'], $row['nom'], $row['prenom'], $groupe, $row['vote']);
             }
         }
         return $ResultatSet;

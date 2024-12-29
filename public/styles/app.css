@@ -34,9 +34,11 @@ h3{
 }
 
 table {
-    width: 10%;
+    width: 20%;
+    left: 120px;
     bottom: 120px;
     position: absolute;
+    font-size: 30px;
 }
 th, td {
     border: 1px solid #ddd;

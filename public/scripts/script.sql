@@ -15,6 +15,7 @@ Create table Candidat(
     nom varchar(50),
     prenom varchar(50),
     idGroupe int,
+    vote int,
     CONSTRAINT Candidat_PK PRIMARY KEY(idCandidat),
     CONSTRAINT Candidat_Groupe_FK FOREIGN KEY(idGroupe) REFERENCES Groupe(idGroupe)
 );
