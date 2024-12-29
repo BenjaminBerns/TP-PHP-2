@@ -84,11 +84,11 @@
             if (!isNaN(currentValue)) {
                 counter.textContent = currentValue + 1;
             } else {
-                console.error("Valeur de compteur invalide");
+                console.error("Valeur invalide");
             }
             updateTotalVotes();
         } else {
-            alert("Le nombre total de votes ne peut pas dépasser le nombre de candidats.");
+            alert("Le nombre total de votes ne peut pas dépasser le nombre de candidats !!!");
         }
     }
 
