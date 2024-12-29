@@ -37,3 +37,6 @@ if($path === "/groupe")
     $controller = new GroupeController($pdo);
 }
 
+if($path === "/resultat"){
+    include_once "templates/view/resultat.php";
+}

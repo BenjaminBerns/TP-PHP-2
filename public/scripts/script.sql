@@ -29,17 +29,6 @@ create table Election(
     CONSTRAINT Election_Etat_FK FOREIGN KEY(idEtat) REFERENCES Etat_election(idEat)
 );
 
-create table vote(
-    idVote int Auto_increment,
-    idVotant int,
-    idElection int,
-    idVoteCandidat int,
-    CONSTRAINT vote_PK PRIMARY KEY(idVote),
-    CONSTRAINT vote_Candidat_FK FOREIGN KEY(idVotant) REFERENCES Candidat(idCandidat),
-    CONSTRAINT vote_CandidatVoté_FK FOREIGN KEY(idVoteCandidat) REFERENCES Candidat(idCandidat),
-    CONSTRAINT vote_Election_FK FOREIGN KEY(idElection) REFERENCES Election(idelection)
-);
-
 INSERT INTO Groupe (idGroupe, nomGroupe) VALUES
                                              (1, '24-25-3OLEN-Cyber'),
                                              (2, '24-25-3OLEN-Dev');

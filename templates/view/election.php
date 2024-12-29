@@ -9,19 +9,26 @@
 <body>
 <h1>Gestion des Votes</h1>
 <div class="box">
+    <form method="get" action="/resultat">
     <?php if (!empty($candidats)):
         foreach ($candidats as $index => $candidat): ?>
-            <div class="container1">
-                <h3 class="candidat1"><?php echo $candidat->getNomCandidat(); ?> <?php echo $candidat->getPrenomCandidat(); ?></h3>
-                <h4 class="counter1" id="counter-<?php echo $index; ?>"><?php echo $candidat->getVote(); ?></h4>
-                <button class="addbtn1" data-id="<?php echo $index; ?>">+</button>
-                <button class="rmvbtn1" data-counter-id="<?php echo $index; ?>">-</button>
-            </div>
-        <?php endforeach;
-    else: ?>
+                <div class="container1">
+                    <h3 class="candidat1"><?php echo $candidat->getNomCandidat(); ?> <?php echo $candidat->getPrenomCandidat(); ?></h3>
+                    <h4 class="counter1" id="counter-<?php echo $index; ?>"><?php echo $candidat->getVote(); ?></h4>
+                    <button class="addbtn1" type="button" data-id="<?php echo $index; ?>">+</button>
+                    <button class="rmvbtn1" type="button" data-counter-id="<?php echo $index; ?>">-</button>
+                </div>
+        <?php endforeach;?>
+
+    <?php else: ?>
         <p>Aucun candidat trouvé dans la base de données.</p>
     <?php endif; ?>
+                <button type="submit" id="btn" class="confirm" name="idGroupe" value="<?php echo $candidat->getGroupe()->getIdGroupe(); ?>">
+                    Confirmer
+                </button>
+            </form>
 </div>
+
 
 <!-- Tableau pour afficher le total des votes -->
 <table>
