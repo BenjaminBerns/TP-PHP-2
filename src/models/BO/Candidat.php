@@ -1,5 +1,7 @@
 <?php
 
+namespace App\models\BO;
+
 class Candidat
 {
     private int $idCandidat;

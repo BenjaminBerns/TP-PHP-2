@@ -1,5 +1,7 @@
 <?php
 
+namespace App\models\BO;
+
 class Groupe
 {
     private int $idGroupe;

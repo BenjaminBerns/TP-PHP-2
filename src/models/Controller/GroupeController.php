@@ -1,12 +1,10 @@
 <?php
 
-
-
 namespace App\models\Controller;
 
 use App\BDD\DbConnexion;
 use App\models\DAO\GroupeDAO;
-use Groupe;
+use App\models\BO;
 
 class GroupeController
 {
@@ -15,10 +13,16 @@ class GroupeController
         $this->pdo = DbConnexion::getOrCreateInstance()->getPdo();
     }
 
-    function ShowGroupe()
+    function ShowGroupe(): void
     {
         $DAO = new GroupeDAO($this->pdo);
-        $res = $DAO->getAllGroupe();
-        require_once "templates/view";
+        $groupe = $DAO->getAllGroupe();
+
+        require_once "templates/view/groupe.php";
+    }
+
+    function ShowGroupid(): void
+    {
+        $DAO = new GroupeDAO($this->pdo);
     }
 }
