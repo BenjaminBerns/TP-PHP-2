@@ -24,7 +24,7 @@
         <p>Aucun candidat trouvé dans la base de données.</p>
     <?php endif; ?>
         <button type="submit" id="btn" class="confirm" name="idGroupe"
-                value="<?php echo $candidat->getGroupe()->getIdGroupe(); ?>"
+                value="<?php echo $candidat->getIdCandidat(); ?>"
                 onclick="findTopCandidate()">
             Confirmer
         </button>
