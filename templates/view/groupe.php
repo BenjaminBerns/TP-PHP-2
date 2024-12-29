@@ -8,13 +8,6 @@
 <body>
 <h1 class="Titre">Application élection des délégués</h1>
 <h2 class="Titre2">Candidats</h2>
-<div class="box">
-    <div class="container1" >
-        <h3 class="candidat1"></h3>
-        <h4 class="counter1" id="counter">0</h4>
-        <button class="addbtn1" id="btn">+</button>
-    </div>
-</div>
 <?php
 if (!empty($groupe)) {
     foreach ($groupe as $groupes) {

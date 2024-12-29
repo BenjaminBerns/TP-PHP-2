@@ -5,17 +5,16 @@ use App\models\BO\Candidat;
 
 class CandidatsDAO
 {
-
-    private \PDO $PDO;
+    private \PDO $pdo;
     function __construct(\PDO $pdo){
         $this->pdo = $pdo;
     }
     function getAllCandidatsByGroupId($idGroupe): ?array
     {
         $ResultatSet = null;
-        $repo = new GroupeDAO($this->db);
+        $repo = new GroupeDAO($this->pdo);
         $req = "SELECT * FROM candidat WHERE idGroupe = :idGroupe";
-        $reqPrep = $this->db->prepare($req);
+        $reqPrep = $this->pdo->prepare($req);
         $res = $reqPrep->execute([':idGroupe' => $idGroupe]);
 
         if($res){

@@ -28,7 +28,6 @@ if($path === "/groupe" && isset($_GET["idGroupe"]))
     $id = (int)$_GET["idGroupe"];
     $controller = new \App\models\DAO\CandidatsDAO($pdo);
     $candidats = $controller->getAllCandidatsByGroupId($id);
-
     include_once "templates/view/election.php";
 }
 

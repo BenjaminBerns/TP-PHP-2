@@ -5,9 +5,10 @@ namespace App\models\BO;
 class Candidat
 {
     private int $idCandidat;
-    private String $nomCandidat;
-    private String $prenomCandidat;
+    private string $nomCandidat;
+    private string $prenomCandidat;
     private Groupe $groupe;
+    private string $emailCandidat;
 
     /**
      * @param int $idCandidat

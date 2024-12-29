@@ -1,7 +1,7 @@
 
 
 
-<!--/*<div class="box">
+<!--/<div class="box">
      if (!empty($candidats)):
         foreach ($candidats as $candidat): ?>
             <div class="container1" >
